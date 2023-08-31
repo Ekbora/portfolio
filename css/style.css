@@ -48,29 +48,54 @@ body {
 }
 
 .section {
-    min-height: 80vh;
+    min-height: 500px;
 }
 
 .section-moi {
     height: auto;
-    background: #412cff;
+    background: url("../img/code-bg.png") center;
+    background-size: contain;
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .section-moi .text {
-    width: 50%;
     text-align: center;
-    text-shadow: #fff 4px -3px 4px,
-                 #fff -4px 3px 4px,
-                 #fff 1px 0px 4px;
+    color: white;
 }
 
-.section-moi .img-div {
-    overflow: hidden;
-    width: 50%;
-    height: 100%;
+.section-moi .text h1 {
+    font-size: 40px;
+}
+
+.section-moi .text p {
+    font-size: 25px;
+}
+
+.savoir-plus {
+    background: #2965f1;
+    padding: 10px;
+    font-size: 20px;
+    border: #2965f1 2px solid;
+    border-radius: 20px;
+    transition: .5s ease !important;
+    cursor: pointer;
+}
+
+.savoir-plus a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.savoir-plus:hover {
+    background: #fff;
+}
+
+.savoir-plus:hover > a {
+    color: #2965f1;
 }
 
 .section-competences {
@@ -144,8 +169,6 @@ body {
 .js > img,
 .python > img {
     border-radius: 20px;
-    border: solid 5px black;
-    padding: 5px;
 }
 
 .html:hover {
