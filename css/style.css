@@ -26,6 +26,10 @@ body {
     border-radius: 10px 20px;
 }
 
+.top .nav-btn {
+    display: none;
+}
+
 .navbar ul {
     display: flex;
     gap: 50px;
@@ -53,8 +57,8 @@ body {
 
 .section-moi {
     height: auto;
-    background: url("../img/code-bg.png") center;
-    background-size: contain;
+    background: url("../img/code-bg.png");
+    background-size: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,7 +146,7 @@ body {
 .wrapper-projets .item:first-child img {
     width: 100%;
     height: 80%;
-} 
+}
 
 .html {
     background: #f06529;
@@ -223,6 +227,10 @@ body {
     padding: .9rem;
 }
 
+.calculatrice {
+    padding: 1rem;
+}
+
 .eksite h3 a {
     text-decoration: none;
     color: black;
@@ -243,31 +251,39 @@ body {
     margin: 0 auto;
     width: fit-content;
     padding: 10px;
-    color: #412cff;
+    color: #fff;
 }
 
 .section-github p {
     font-size: 24px;
+    text-align: center;
+    color: #fff;
 }
 
 .section-github .github-btn {
-    background: #8b7eff;
+    background: #2965f1;
     padding: 10px;
     border-radius: 50px;
     width: fit-content;
     margin-inline: auto;
     font-size: 24px;
-    border: solid 4px #000;
+    border: solid 2px #2965f1;
     transition: .4s ease background;
 }
 
 .section-github .github-btn a {
-    color: #234f88;
+    color: #fff;
     text-decoration: none;
+    display: block;
 }
 
 .section-github .github-btn:hover {
-    background: #18115b;
+    background: #fff;
+    color: #2965f1;
+}
+
+.section-github .github-btn:hover > a {
+    color: #2965f1;
 }
 
 .pied-de-page {
@@ -280,10 +296,79 @@ body {
 }
 
 .observable {
+    transform: scale(0);
     opacity: 0; 
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }   
 
 .observed {
+    transform: scale(1);
     opacity: 1; 
-}   
+}
+
+@media screen and (max-width: 600px) {
+    .top .nav-btn {
+        display: block;
+        background: #18115b;
+        padding: 10px;
+        color: white;
+        border: solid 2px #18115b;
+        border-radius: 20px;
+        transition: .4s ease all;
+    }
+
+    .top .nav-btn:active {
+        background: #fff;
+        color: #18115b;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 13%;
+        left: 0;
+        background: #8b7eff;
+        padding: 10px;
+        width: 100%;
+        border-radius: 10px;
+        transform: scaleY(0);
+        transition: .5s transform ease;
+    }
+
+    .navbar.open {
+        transform: scaleY(1);
+    }
+
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .navbar ul li {
+        width: 90%;
+    }
+
+    .navbar ul li a {
+        display: block;
+        width: 90%;
+        text-align: center;
+    }
+
+    .wrapper {
+        display: grid;
+        align-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 10px;
+    }
+
+    .wrapper-projets {
+        display: grid;
+        gap: 10px;
+        text-align: center;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -11,3 +11,12 @@ const observableElement = document.querySelectorAll(".observable")
 observableElement.forEach(elt => {
     observer.observe(elt)
 })
+
+const navbar = document.querySelector(".navbar")
+const navBtn = document.querySelector(".nav-btn")
+
+navbar
+
+navBtn.addEventListener("click", () => {
+    navbar.classList.toggle("open")
+})
